@@ -62,7 +62,8 @@ export const ABOUT = {
   ],
   bullets: [
     'Авторские программы под состояние и запрос',
-    'Камерный формат — максимум 2 гостя одновременно',
+    'Камерный формат — до 4 гостей одновременно',
+    'Индивидуальный подход: программу подбираем под ваше тело и цель',
     'Только проверенная косметика и масла',
   ],
 };
@@ -70,7 +71,7 @@ export const ABOUT = {
 export const CONTACTS: ContactInfo = {
   phone: '+79781877070',
   phoneFormatted: '+7 (978) 187-70-70',
-  email: 'beliylotos@mail.ru',
+  email: 'white-lotus-simf@mail.ru',
   address: 'г. Симферополь, ул. Проспект Победы, д. 5А',
   workingHours: 'Ежедневно, 9:00 — 21:00',
   mapEmbedUrl:
