@@ -24,10 +24,16 @@ export function Header() {
       <div className="mx-auto flex max-w-(--container-content) items-center justify-between px-5 py-4 md:px-8">
         <a
           href="#top"
-          className="flex items-center gap-2 font-heading text-xl text-ink"
+          className="flex items-center gap-2.5 font-heading text-xl text-ink"
           aria-label="Белый Лотос — на главную"
         >
-          <LotusGlyph className="h-7 w-7 text-water-deep" />
+          <img
+            src="/icon-512.png"
+            alt=""
+            width={36}
+            height={36}
+            className="h-9 w-9"
+          />
           <span className="tracking-wide">Белый&nbsp;Лотос</span>
         </a>
 
@@ -89,26 +95,6 @@ export function Header() {
         </nav>
       )}
     </header>
-  );
-}
-
-function LotusGlyph({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 32 32"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.4"
-      strokeLinejoin="round"
-      strokeLinecap="round"
-      aria-hidden="true"
-      className={className}
-    >
-      <ellipse cx="16" cy="11" rx="3" ry="7.5" />
-      <ellipse cx="16" cy="11" rx="3" ry="7.5" transform="rotate(60 16 16)" />
-      <ellipse cx="16" cy="11" rx="3" ry="7.5" transform="rotate(120 16 16)" />
-      <circle cx="16" cy="16" r="2" fill="currentColor" stroke="none" />
-    </svg>
   );
 }
 

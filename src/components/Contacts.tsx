@@ -60,7 +60,7 @@ export function Contacts() {
                 rel="noreferrer"
                 className="rounded-pill border border-water-deep/30 px-4 py-2 text-sm text-ink hover:bg-water/30"
               >
-                ВКонтакте
+                VK
               </a>
             )}
             {CONTACTS.max && (

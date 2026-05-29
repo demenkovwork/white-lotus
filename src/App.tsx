@@ -3,8 +3,9 @@ import { ScrollScene } from '@/components/ScrollScene';
 import { SpaMenu } from '@/components/SpaMenu';
 import { Promotions } from '@/components/Promotions';
 import { About } from '@/components/About';
+import { Gallery } from '@/components/Gallery';
 import { Contacts } from '@/components/Contacts';
-import { BookingForm } from '@/components/BookingForm';
+import { BookingCta } from '@/components/BookingCta';
 import { Footer } from '@/components/Footer';
 import { useLenis } from '@/hooks/useLenis';
 
@@ -18,8 +19,9 @@ function App() {
         <Promotions />
         <SpaMenu />
         <About />
+        <Gallery />
         <Contacts />
-        <BookingForm />
+        <BookingCta />
       </main>
       <Footer />
     </>

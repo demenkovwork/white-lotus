@@ -69,7 +69,7 @@ export const SERVICE_OVERVIEW: ServiceOverview[] = [
   {
     id: 'couple',
     title: 'Парные',
-    summary: 'Сеансы и ритуалы для двоих',
+    summary: 'Сеансы и ритуалы для компании до 4 человек',
     anchor: 'menu-couple-sessions',
   },
   {

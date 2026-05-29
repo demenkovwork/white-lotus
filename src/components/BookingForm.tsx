@@ -307,6 +307,16 @@ export function BookingForm() {
                 Написать в MAX
               </a>
             )}
+            {CONTACTS.vk && (
+              <a
+                href={CONTACTS.vk}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-pill border border-water-deep/40 px-6 py-3 text-center text-sm font-medium text-ink transition-colors hover:bg-water/30"
+              >
+                Мы в VK
+              </a>
+            )}
           </div>
         </aside>
       </div>

@@ -32,30 +32,33 @@ export const LEGAL: LegalInfo = {
 
 export const PROMOTIONS: Promotion[] = [
   {
-    id: 'first-visit',
-    title: 'Первое посещение',
-    description: 'Скидка 15% на любой массаж при первом визите. По будням.',
-    badge: '−15%',
-  },
-  {
-    id: 'duo',
-    title: 'Парный сеанс',
-    description: 'Спа-ритуал на двоих в отдельном кабинете со скидкой.',
-    badge: 'Для двоих',
+    id: 'abonement-60',
+    title: '10 сеансов по 60 минут',
+    description:
+      'Абонемент на 10 сеансов общего или выбранного формата. 25 000 ₽ вместо 27 000 ₽.',
+    badge: 'Абонемент',
   },
   {
     id: 'gift',
     title: 'Подарочный сертификат',
-    description: 'На сумму от 3 000 ₽. Можно подарить близкому человеку.',
+    description: 'На любую сумму. Можно подарить близкому человеку.',
+    badge: 'Подарок',
+  },
+  {
+    id: 'birthday',
+    title: 'День рождения',
+    description:
+      'Скидка 10% на любой сеанс в течение недели до и после вашего дня рождения.',
+    badge: '−10%',
   },
 ];
 
 export const ABOUT = {
   heading: 'О центре',
-  foundedYear: 2023,
+  foundedYear: 2024,
   paragraphs: [
-    'Спа-центр «Белый Лотос» работает в Симферополе с 2023 года. Мы не про шумный конвейер — про тишину, ритм и внимание к телу.',
-    'Команда — сертифицированные массажисты и банщики. Используем натуральную косметику и проверенные техники, без эзотерики и обещаний чудес.',
+    'Спа-центр «Белый Лотос» работает в Симферополе с 2024 года. Мы не про шумный конвейер — про тишину, ритм и внимание к телу.',
+    'Команда — сертифицированные массажисты. Используем натуральную косметику и проверенные техники, без эзотерики и обещаний чудес.',
   ],
   bullets: [
     'Авторские программы под состояние и запрос',
@@ -95,9 +98,32 @@ export const NAV_LINKS = [
   { id: 'services', label: 'Услуги' },
   { id: 'menu', label: 'Меню' },
   { id: 'promotions', label: 'Акции' },
+  { id: 'gallery', label: 'Фото' },
   { id: 'about', label: 'О нас' },
   { id: 'contacts', label: 'Контакты' },
   { id: 'booking', label: 'Запись' },
+];
+
+export type GalleryPhoto = {
+  src: string;
+  alt: string;
+  caption: string;
+};
+
+export const GALLERY_PHOTOS: GalleryPhoto[] = [
+  { src: '/photos/photo-01.webp', alt: 'Кабинет для массажа в тёплом свете', caption: 'Тёплый свет' },
+  { src: '/photos/photo-03.webp', alt: 'Уютная зона перед сеансом', caption: 'Перед сеансом' },
+  { src: '/photos/photo-06.webp', alt: 'Массаж спины с маслами', caption: 'Массаж с маслами' },
+  { src: '/photos/photo-04.webp', alt: 'Массаж лица', caption: 'Уход за лицом' },
+  { src: '/photos/photo-08.webp', alt: 'Массаж плеч и спины', caption: 'Глубокое расслабление' },
+  { src: '/photos/photo-07.webp', alt: 'Детали интерьера: поющая чаша', caption: 'Детали' },
+  { src: '/photos/photo-11.webp', alt: 'Сеанс при свечах', caption: 'При свечах' },
+  { src: '/photos/photo-09.webp', alt: 'Расслабляющий сеанс', caption: 'Тишина' },
+  { src: '/photos/photo-13.webp', alt: 'Массаж стоп', caption: 'Массаж стоп' },
+  { src: '/photos/photo-10.webp', alt: 'Процедурный кабинет', caption: 'Кабинет' },
+  { src: '/photos/photo-02.webp', alt: 'Светлый процедурный кабинет', caption: 'Чистота и свет' },
+  { src: '/photos/photo-12.webp', alt: 'Атмосферное освещение', caption: 'Атмосфера' },
+  { src: '/photos/photo-05.webp', alt: 'Интерьер спа-центра', caption: 'Пространство' },
 ];
 
 // Манифест скролл-сцены.

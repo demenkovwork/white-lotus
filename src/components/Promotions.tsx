@@ -6,7 +6,7 @@ export function Promotions() {
     <Section
       id="promotions"
       eyebrow="Акции"
-      title="Поводы прийти впервые"
+      title="Выгодные предложения"
       tone="soft"
     >
       <ul className="grid grid-cols-1 gap-4 md:grid-cols-3">
