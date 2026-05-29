@@ -54,15 +54,15 @@ export function SpaMenu() {
             Спа-меню
           </h2>
           <p className="text-base text-ink-soft md:text-lg">
-            Выберите категорию слева — справа откроется прайс только по ней.
+            Выберите категорию — откроется прайс только по ней.
           </p>
         </header>
 
-        <div className="grid grid-cols-[minmax(7.5rem,9.5rem)_1fr] items-start gap-4 md:grid-cols-[11rem_1fr] md:gap-6 lg:grid-cols-[13rem_1fr] lg:gap-8">
+        <div className="flex flex-col gap-4 md:grid md:grid-cols-[11rem_1fr] md:items-start md:gap-6 lg:grid-cols-[13rem_1fr] lg:gap-8">
           <nav
             aria-label="Категории меню"
             role="tablist"
-            className="sticky top-24 flex flex-col gap-1"
+            className="scroll-soft -mx-5 flex gap-2 overflow-x-auto px-5 pb-1 md:mx-0 md:sticky md:top-24 md:flex-col md:gap-1 md:overflow-visible md:px-0 md:pb-0"
           >
             {SERVICE_CATEGORIES.map((category) => {
               const isActive = category.id === activeId;
@@ -76,10 +76,10 @@ export function SpaMenu() {
                   id={`menu-tab-${category.id}`}
                   onClick={() => selectCategory(category.id)}
                   className={[
-                    'rounded-soft px-2.5 py-2 text-left text-xs leading-snug transition-colors md:px-3 md:py-2.5 md:text-sm',
+                    'shrink-0 rounded-pill border px-3.5 py-2 text-left text-xs leading-snug whitespace-nowrap transition-colors md:shrink md:rounded-soft md:border-transparent md:px-3 md:py-2.5 md:text-sm md:whitespace-normal',
                     isActive
-                      ? 'bg-bg font-medium text-ink shadow-soft'
-                      : 'text-ink-soft hover:bg-bg/70 hover:text-ink',
+                      ? 'border-water-deep/40 bg-bg font-medium text-ink shadow-soft md:border-transparent'
+                      : 'border-water-deep/20 text-ink-soft hover:bg-bg/70 hover:text-ink md:border-transparent',
                   ].join(' ')}
                 >
                   {category.title}

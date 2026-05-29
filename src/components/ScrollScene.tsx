@@ -56,6 +56,40 @@ export function ScrollScene() {
     let rafId = 0;
     let videoTargetTime = 0;
 
+    const videoEls = [desktopVideo, mobileVideo].filter(
+      (v): v is HTMLVideoElement => Boolean(v),
+    );
+
+    // iOS/Android не подгружают видео по preload и не дают перематывать
+    // currentTime, пока видео не «разблокировано» пользовательским жестом.
+    // Делаем play()->pause() на первом касании/скролле, чтобы scrub заработал.
+    let unlocked = false;
+    const unlockVideos = () => {
+      if (unlocked) return;
+      unlocked = true;
+      for (const video of videoEls) {
+        video.load();
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.then === 'function') {
+          playPromise
+            .then(() => {
+              video.pause();
+              video.currentTime = videoTargetTime;
+            })
+            .catch(() => {});
+        }
+      }
+      window.removeEventListener('touchstart', unlockVideos);
+      window.removeEventListener('pointerdown', unlockVideos);
+      window.removeEventListener('wheel', unlockVideos);
+    };
+
+    if (hasVideo) {
+      window.addEventListener('touchstart', unlockVideos, { passive: true });
+      window.addEventListener('pointerdown', unlockVideos, { passive: true });
+      window.addEventListener('wheel', unlockVideos, { passive: true });
+    }
+
     if (hasVideo) {
       const tick = () => {
         const video = getActiveVideo(desktopVideo, mobileVideo);
@@ -107,6 +141,9 @@ export function ScrollScene() {
 
     return () => {
       cancelAnimationFrame(rafId);
+      window.removeEventListener('touchstart', unlockVideos);
+      window.removeEventListener('pointerdown', unlockVideos);
+      window.removeEventListener('wheel', unlockVideos);
       tl.scrollTrigger?.kill();
       tl.kill();
     };
