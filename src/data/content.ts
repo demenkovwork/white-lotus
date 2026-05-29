@@ -108,22 +108,24 @@ export type GalleryPhoto = {
   src: string;
   alt: string;
   caption: string;
+  width: number;
+  height: number;
 };
 
 export const GALLERY_PHOTOS: GalleryPhoto[] = [
-  { src: '/photos/photo-01.webp', alt: 'Кабинет для массажа в тёплом свете', caption: 'Тёплый свет' },
-  { src: '/photos/photo-03.webp', alt: 'Уютная зона перед сеансом', caption: 'Перед сеансом' },
-  { src: '/photos/photo-06.webp', alt: 'Массаж спины с маслами', caption: 'Массаж с маслами' },
-  { src: '/photos/photo-04.webp', alt: 'Массаж лица', caption: 'Уход за лицом' },
-  { src: '/photos/photo-08.webp', alt: 'Массаж плеч и спины', caption: 'Глубокое расслабление' },
-  { src: '/photos/photo-07.webp', alt: 'Детали интерьера: поющая чаша', caption: 'Детали' },
-  { src: '/photos/photo-11.webp', alt: 'Сеанс при свечах', caption: 'При свечах' },
-  { src: '/photos/photo-09.webp', alt: 'Расслабляющий сеанс', caption: 'Тишина' },
-  { src: '/photos/photo-13.webp', alt: 'Массаж стоп', caption: 'Массаж стоп' },
-  { src: '/photos/photo-10.webp', alt: 'Процедурный кабинет', caption: 'Кабинет' },
-  { src: '/photos/photo-02.webp', alt: 'Светлый процедурный кабинет', caption: 'Чистота и свет' },
-  { src: '/photos/photo-12.webp', alt: 'Атмосферное освещение', caption: 'Атмосфера' },
-  { src: '/photos/photo-05.webp', alt: 'Интерьер спа-центра', caption: 'Пространство' },
+  { src: '/photos/photo-01.webp', alt: 'Кабинет для массажа в тёплом свете', caption: 'Тёплый свет', width: 1067, height: 1600 },
+  { src: '/photos/photo-03.webp', alt: 'Уютная зона перед сеансом', caption: 'Перед сеансом', width: 1067, height: 1600 },
+  { src: '/photos/photo-06.webp', alt: 'Массаж спины с маслами', caption: 'Массаж с маслами', width: 1600, height: 968 },
+  { src: '/photos/photo-04.webp', alt: 'Массаж лица', caption: 'Уход за лицом', width: 1024, height: 1536 },
+  { src: '/photos/photo-08.webp', alt: 'Массаж плеч и спины', caption: 'Глубокое расслабление', width: 1067, height: 1600 },
+  { src: '/photos/photo-07.webp', alt: 'Детали интерьера: поющая чаша', caption: 'Детали', width: 853, height: 1280 },
+  { src: '/photos/photo-11.webp', alt: 'Сеанс при свечах', caption: 'При свечах', width: 1024, height: 1536 },
+  { src: '/photos/photo-09.webp', alt: 'Расслабляющий сеанс', caption: 'Тишина', width: 1067, height: 1600 },
+  { src: '/photos/photo-13.webp', alt: 'Массаж стоп', caption: 'Массаж стоп', width: 1067, height: 1600 },
+  { src: '/photos/photo-10.webp', alt: 'Процедурный кабинет', caption: 'Кабинет', width: 1067, height: 1600 },
+  { src: '/photos/photo-02.webp', alt: 'Светлый процедурный кабинет', caption: 'Чистота и свет', width: 853, height: 1280 },
+  { src: '/photos/photo-12.webp', alt: 'Атмосферное освещение', caption: 'Атмосфера', width: 853, height: 1280 },
+  { src: '/photos/photo-05.webp', alt: 'Интерьер спа-центра', caption: 'Пространство', width: 853, height: 1280 },
 ];
 
 // Манифест скролл-сцены.

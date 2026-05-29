@@ -69,7 +69,23 @@ export function Gallery() {
       };
     }, root);
 
-    return () => ctx.revert();
+    // Фото грузятся лениво; даже с зарезервированным aspect-ratio
+    // пересчитываем триггеры после загрузки, чтобы позиции не «уплывали».
+    let refreshRaf = 0;
+    const scheduleRefresh = () => {
+      cancelAnimationFrame(refreshRaf);
+      refreshRaf = requestAnimationFrame(() => ScrollTrigger.refresh());
+    };
+    const imgEls = root.querySelectorAll<HTMLImageElement>('[data-parallax]');
+    imgEls.forEach((img) => {
+      if (!img.complete) img.addEventListener('load', scheduleRefresh);
+    });
+
+    return () => {
+      cancelAnimationFrame(refreshRaf);
+      imgEls.forEach((img) => img.removeEventListener('load', scheduleRefresh));
+      ctx.revert();
+    };
   }, []);
 
   return (
@@ -102,9 +118,12 @@ export function Gallery() {
                 data-parallax
                 src={photo.src}
                 alt={photo.alt}
+                width={photo.width}
+                height={photo.height}
                 loading="lazy"
                 decoding="async"
-                className="w-full origin-center object-cover transition-[filter] duration-500 will-change-transform group-hover:brightness-110"
+                style={{ aspectRatio: `${photo.width} / ${photo.height}` }}
+                className="h-auto w-full origin-center object-cover transition-[filter] duration-500 will-change-transform group-hover:brightness-110"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <figcaption className="pointer-events-none absolute bottom-0 left-0 right-0 translate-y-3 p-4 text-sm font-medium text-bg opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
