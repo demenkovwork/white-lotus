@@ -1,0 +1,18 @@
+---
+description: Базовый контекст проекта «Белый Лотос»
+alwaysApply: true
+---
+
+# Проект «Белый Лотос»
+
+Лендинг спа-центра с скролл-анимацией. Стек: Vite + React 19 + TypeScript + Tailwind v4 + GSAP/ScrollTrigger + Lenis + lottie-react. Подход к hero-анимации — image sequence (серии кадров под desktop/mobile), не Lottie/SVG.
+
+## Правила
+
+- Алиас `@/*` → `src/*`. Никаких относительных `../../`.
+- Стили — только Tailwind utility-классы. Палитра и шрифты заданы в `src/index.css` через `@theme` (Tailwind v4): `bg`, `lotus`, `lotus-accent`, `water`, `water-deep`, `meditation`, `ink`, `ink-soft`. Шрифты: `font-heading` (Cormorant) и `font-sans` (Manrope, по умолчанию).
+- Анимации: только `transform` и `opacity`. Не трогать `top/left/width/height`.
+- Все скролл-кадры регистрируем в `SCENE_FRAMES` (`src/data/content.ts`) с полями `desktop`, `mobile`, `progress`.
+- Уважаем `prefers-reduced-motion`.
+- На мобиле — упрощённая сцена через `gsap.matchMedia()`.
+- Контент во временных заглушках помечен `TODO:` — не путать с финальным.

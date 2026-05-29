@@ -1,0 +1,13 @@
+---
+description: Скролл-анимации (GSAP + ScrollTrigger + Lenis)
+globs: src/components/ScrollScene.tsx,src/hooks/**.ts
+---
+
+# Скролл-анимации
+
+- Lenis инициализируется один раз в `useLenis()` хуке, синхронизируется с `gsap.ticker` и `ScrollTrigger.update`.
+- GSAP timeline создаётся внутри `gsap.context()` со scope = ref секции, cleanup через `ctx.revert()`.
+- Сцена pinned: `start: 'top top'`, `end: '+=400%'`, `scrub: 1`, `pin: true`.
+- Image sequence: для скраба кадров используем единый canvas или абсолютно спозиционированные `<img>` с `opacity` по прогрессу. Список кадров — в `SCENE_FRAMES`.
+- Под мобайл — отдельная ветка через `gsap.matchMedia('(max-width: 768px)')` с упрощённым timeline.
+- Для актуального API GSAP/ScrollTrigger проверяй context7 MCP — не пиши по памяти.

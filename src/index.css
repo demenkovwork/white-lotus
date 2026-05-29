@@ -1,0 +1,101 @@
+@import 'tailwindcss';
+@import '@fontsource/cormorant/400.css';
+@import '@fontsource/cormorant/500.css';
+@import '@fontsource/cormorant/600.css';
+@import '@fontsource/manrope/300.css';
+@import '@fontsource/manrope/400.css';
+@import '@fontsource/manrope/500.css';
+@import '@fontsource/manrope/600.css';
+
+@theme {
+  --color-bg: #f7f9f8;
+  --color-lotus: #ffffff;
+  --color-lotus-accent: #f3d9e3;
+  --color-water: #bcd9d6;
+  --color-water-deep: #7fa9a4;
+  --color-meditation: #e8d3b0;
+  --color-ink: #2f3b39;
+  --color-ink-soft: #5b6a67;
+
+  --font-heading: 'Cormorant', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --container-content: 72rem;
+
+  --radius-soft: 0.875rem;
+  --radius-pill: 9999px;
+
+  --shadow-soft: 0 10px 30px -12px rgba(47, 59, 57, 0.18);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: auto;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-bg);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Вложенные скроллы — тонкий ползунок в палитре сайта */
+.scroll-soft {
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--color-water-deep) 50%, transparent)
+    transparent;
+}
+
+.scroll-soft::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scroll-soft::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 6px 0;
+}
+
+.scroll-soft::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-water-deep) 40%, var(--color-water));
+  border-radius: var(--radius-pill);
+}
+
+.scroll-soft::-webkit-scrollbar-thumb:hover {
+  background: var(--color-water-deep);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

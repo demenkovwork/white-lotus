@@ -1,0 +1,14 @@
+---
+description: Стили и адаптив
+globs: src/**/*.tsx,src/index.css
+---
+
+# Стили (Tailwind v4)
+
+- Конфиг — в `src/index.css` через `@theme`. `tailwind.config.js` НЕ создаём.
+- Кастомные токены: `--color-bg`, `--color-lotus`, `--color-lotus-accent`, `--color-water`, `--color-water-deep`, `--color-meditation`, `--color-ink`, `--color-ink-soft`. Используем как `bg-bg`, `text-ink`, `border-water-deep` и т.д.
+- Контейнер контента: `max-w-(--container-content)` (= 72rem).
+- Высоты экранов: `min-h-svh` (small viewport height) — корректно работает с мобильной адресной строкой.
+- Mobile-first. Брейкпоинты Tailwind по умолчанию (sm 640, md 768, lg 1024).
+- Радиусы: `rounded-soft` (общий) и `rounded-pill` (кнопки/чипы).
+- Тень: `shadow-soft`.
